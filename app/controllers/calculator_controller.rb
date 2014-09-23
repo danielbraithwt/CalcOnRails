@@ -1,4 +1,13 @@
 class CalculatorController < ApplicationController
-  def index
-  end
+		
+	layout false
+
+	def index
+	end
+
+	def calculate
+		puts "CalculatorController >  Action"
+		@result = 2
+	end
+
 end
