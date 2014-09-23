@@ -1,3 +1,5 @@
+require "rubycalc/expression_builder"
+
 class CalculatorController < ApplicationController
 		
 	layout false
@@ -7,7 +9,15 @@ class CalculatorController < ApplicationController
 
 	def calculate
 		puts "CalculatorController >  Action"
-		@result = 2
+
+		# Create the expression builder
+		puts "Expression #{params[:expression]}"
+		expression = params[:expression] || ""
+
+		eb = ExpressionBuilder.new
+		eb.add_line(params[:expression])
+
+		@result = eb.evaluate
 	end
 
 end
