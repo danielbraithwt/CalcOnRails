@@ -1,2 +1,19 @@
+<script>
+function go_to_calculate()
+{
+	// Get the content of the expression div
+	var expression = document.getElementById("expression").innerText;
+
+	// Make expression query safe and pass it via URL
+	var querySafeExpression = expression.replace(/\+/g, "%2B");
+	window.location.href = "/calculator/calculate?expression=" + querySafeExpression;
+}
+</script>
+
 <h1>Welcome To Calc On Rails</h1>
-<%= button_to("Calculate", {:action => "calculate", :expression => "1+1"})  %>
+
+<div id="expression">
+1+1
+</div>
+
+<button type="Calculate" onclick="go_to_calculate()"></button>

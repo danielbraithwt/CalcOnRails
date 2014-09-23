@@ -15,7 +15,7 @@ class CalculatorController < ApplicationController
 		expression = params[:expression] || ""
 
 		eb = ExpressionBuilder.new
-		eb.add_line(params[:expression])
+		eb.add_line(expression)
 
 		@result = eb.evaluate
 	end
