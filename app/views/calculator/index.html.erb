@@ -8,143 +8,164 @@ function go_to_calculate()
 	var querySafeExpression = expression.replace(/\+/g, "%2B");
 	window.location.href = "/calculator/calculate?expression=" + querySafeExpression;
 }
+
+function add_to_expression(button)
+{
+	if( button = "del" )
+	{
+		// Then we wnat to delete the last entered item
+	}
+	else if( button = "clear" )
+	{
+		document.getElementById("expression").innerText = "";
+	}
+	else
+	{
+		// Get what we need to add
+		//var toAdd = document.getElementById("button_" + button).innerText;
+
+		// Add it to the expression
+		document.getElementById("expression").innerText += buttton;
+	}
+}
+
 </script>
 
 <h1>Welcome To Calc On Rails</h1>
 
 <div id="expression">
-1+1
+
 </div>
 
 <div id="buttons">
 	<div id="button_row_1" class="button_row">
 		
-		<a href="#">
+		<a href="add_to_expression('7')">
 			<div id="button_7" class="button">
-
+				7
 			</div>
 		</a>
 		
-		<a href="#">
+		<a href="add_to_expression('8')">
 			<div id="button_8" class="button">
-
+				8
 			</div>
 		</a>
 		
-		<a href="#">
+		<a href="add_to_expression('9')">
 			<div id="button_9" class="button">
-
+				9
 			</div>
 		</a>
 		
-		<a href="#">
+		<a href="add_to_expression('del')">
 			<div id="button_del" class="button">
-
+				DEL
 			</div>
 		</a>
 
-		<a href="#">
+		<a href="add_to_expression('clear')">
 			<div id="button_clear" class="button">
-
+				AC
 			</div>
 		</a>
 
 	</div>
 	<div id="button_row_2" class="button_row">
 
-		<a href="#">
+		<a href="add_to_expression">
 			<div id="button_4" class="button">
-
+				4
 			</div>
 		</a>
 
-		<a href="#">
+		<a href="add_to_expression('5')">
 			<div id="button_5" class="button">
-
+				5
 			</div>
 		</a>
 
-		<a href="#">
+		<a href="add_to_expression('6')">
 			<div id="button_6" class="button">
-
+				6
 			</div>
 		</a>
 
-		<a href="#">
+		<a href="add_to_expression('*')">
 			<div id="button_times" class="button">
-
+				*
 			</div>
 		</a>
 		
-		<a href="#">
+		<a href="add_to_expression('/')">
 			<div id="button_divide" class="button">
-
+				/
 			</div>
 		</a>
 
 	</div>
 	<div id="button_row_3" class="button_row">
 
-		<a href="#">
+		<a href="add_to_expression('1')">
 			<div id="button_1" class="button">
-
+				1
 			</div>
 		</a>
 
-		<a href="#">
+		<a href="add_to_expression('2')">
 			<div id="button_2" class="button">
-
+				2
 			</div>
 		</a>
 		
-		<a  href="#">
+		<a  href="add_to_expression('3')">
 			<div id="button_3" class="button">
-
+				3
 			</div>
 		</a>
 
-		<a href="#">
+		<a href="add_to_expression('+')">
 			<div id="button_plus" class="button">
-
+				+
 			</div>
 		</a>
 
-		<a href="#">
+		<a href="add_to_expression('-')">
 			<div id="button_minus" class="button">
-
+				-
 			</div>
 		</a>
 
 	</div>
 	<div id="button_row_4" class="button_row">
 		
-		<a href="#">
+		<a href="add_to_expression('0')">
 			<div id="button_0" class="button">
-
+				0
 			</div>
 		</a>
 
-		<a href="#">
+		<a href="add_to_expression('.')">
 			<div id="button_point" class="button">
-
+				.
 			</div>
 		</a>
 
-		<a href="#">
+		<a href="add_to_expression('^')">
 			<div id="button_pow" class="button">
-
+				^
 			</div>
 		</a>
 
-		<a href="#">
+		<a href="add_to_expression('')">
 			<div id="button_blank" class="button">
 
 			</div>
 		</a>
 		
-		<a href="#">
+		<a href="go_to_calculate()">
 			<div id="button_exec" class="button">
-
+				EXEC
 			</div>
 		</a>
 
