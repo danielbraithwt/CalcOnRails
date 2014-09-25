@@ -17,7 +17,13 @@ class CalculatorController < ApplicationController
 		eb = ExpressionBuilder.new
 		eb.add_line(expression)
 
-		@result = eb.evaluate
+		@result = ""
+
+		begin
+			@result = eb.evaluate
+		rescue
+			@result = ":( Silly User"
+		end
 	end
 
 end
