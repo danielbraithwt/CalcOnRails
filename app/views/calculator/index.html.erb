@@ -6,6 +6,7 @@ function go_to_calculate()
 
 	// Make expression query safe and pass it via URL
 	var querySafeExpression = expression.replace(/\+/g, "%2B");
+	querySafeExpression = querySafeExpression.replace(/\^/g, "%5E");
 	window.location.href = "/calculator/calculate?expression=" + querySafeExpression;
 }
 
