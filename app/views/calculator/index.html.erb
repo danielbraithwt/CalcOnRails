@@ -28,6 +28,39 @@ function add_to_expression(button)
 		var text = document.getElementById("expression").innerText;
 		document.getElementById("expression").innerText = text + button;
 	}
+	
+	var querySafeExpression = document.getElementById("expression").innerText.replace(/\+/g, "%2B");
+	querySafeExpression = querySafeExpression.replace(/\^/g, "%5E");
+
+	//$.ajax(url: "/calculator/calculate?expression=" + querySafeExpression).done (res) ->
+	//	$("#answer").append result
+	evaluate(querySafeExpression);
+}
+
+function evaluate(expression)
+{
+	var xmlhttp;
+
+	if(window.XMLHttpRequest)
+	{
+		xmlhttp = new XMLHttpRequest();
+	}
+	else
+	{
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	xmlhttp.onreadystatechange = function() 
+	{
+		if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+		{
+			document.getElementById("answer").innerHTML = xmlhttp.resopnseText;
+		}
+
+	}
+
+	xmlhttp.open("GET", "/calculator/calculate?expression="+expression, true);
+	xmlhttp.send();
 }
 
 </script>
