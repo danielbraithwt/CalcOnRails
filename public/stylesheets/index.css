@@ -1,10 +1,26 @@
+#top_bar {
+	width: 100%
+	height: 5%
+	background-color: #00BCD4
+}
+
 #expression {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 10em;
+	color: rgba(0, 0, 0, 0, 0.8);	
+	padding: 10px;
 	width: 100%;
-	height: 30%;
+	height: 25%;
 	float: clear;
-	background-color: #fff8e1;
+	background-color: #FFFFFF;
+
+	box-shadow: 0px 2px 5px #888888;
+	z-index: 9;
+}
+
+#buttons {
+	box-shadow: 0px 2px 5px #888888;
+	z-index: 1;
 }
 
 .button_row {
@@ -18,7 +34,7 @@
 	width:19.99999%;
 	height: 100%;
 	font-family: 'Open Sans', sans-serif;
-	background-color: #ffc107;
+	background-color: #80DEEA;
 	float: right;
 	display: inline-block;
 	*display: inline;
@@ -26,7 +42,7 @@
 	vertical-align: middle;
 	line-height: 200px;
 	font-size: 5em;
-	text-color: #000000;
+	color: rgba(0, 0, 0, 0.8);
 }
 
 a:link {
