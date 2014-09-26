@@ -21,6 +21,8 @@
 	float: clear;
 	background-color: #FFFFFF;
 
+	text-align: left;
+
 	border-bottom-style: dotted;
 	border-color: rgba(0, 0, 0, 0.2);
 }
@@ -31,6 +33,8 @@
 	opacity 0.3;
 	float: clear;
 	background-color: #FFFFFF;
+
+	text-align: right
 }
 
 #buttons {
