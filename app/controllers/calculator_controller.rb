@@ -22,7 +22,7 @@ class CalculatorController < ApplicationController
 		begin
 			@result = eb.evaluate
 		rescue
-			@result = ":( Silly User"
+			@result = "N/A"
 		end
 	end
 
