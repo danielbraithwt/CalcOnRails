@@ -16,6 +16,7 @@ function add_to_expression(button)
 	{
 		// Then we wnat to delete the last entered item
 		var expression = document.getElementById("expression").innerText;
+		ensure_expression_size(expression.substring(0, expression.length-1));
 		document.getElementById("expression").innerHTML = "<span></span>" + expression.substring(0, expression.length-1);
 	}
 	else if( button == "clear" )
@@ -26,14 +27,14 @@ function add_to_expression(button)
 	{
 		// Add the new expression to the div
 		var text = document.getElementById("expression").innerText;
+		ensure_expression_size(text + button);
 		document.getElementById("expression").innerHTML = "<span></span>" +  text + button;
 	}
-	
+
+	// Make query safe and use the AJAX evaluate function to get the result of it
 	var querySafeExpression = document.getElementById("expression").innerText.replace(/\+/g, "%2B");
 	querySafeExpression = querySafeExpression.replace(/\^/g, "%5E");
 
-	//$.ajax(url: "/calculator/calculate?expression=" + querySafeExpression).done (res) ->
-	//	$("#answer").append result
 	evaluate(querySafeExpression);
 }
 
@@ -61,6 +62,17 @@ function evaluate(expression)
 
 	xmlhttp.open("GET", "/calculator/calculate?expression="+expression, true);
 	xmlhttp.send();
+}
+
+function ensure_expression_size(new_expression)
+{
+	var expression_tag = document.getElementById("expression");
+
+	if( new_expression.length > 20 )
+	{
+		expression_tag.style.fontSize = 5 - ( 0.18 *  (1 + (new_expression.length-20))) + "em"; 
+	}
+	else expression_tag.style.fontSize = "5em";
 }
 
 </script>
