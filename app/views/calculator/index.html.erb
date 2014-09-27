@@ -16,7 +16,7 @@ function add_to_expression(button)
 	{
 		// Then we wnat to delete the last entered item
 		var expression = document.getElementById("expression").innerText;
-		document.getElementById("expression").innerText = expression.substring(0, expression.length-1);
+		document.getElementById("expression").innerHTML = "<span></span>" + expression.substring(0, expression.length-1);
 	}
 	else if( button == "clear" )
 	{
@@ -26,7 +26,7 @@ function add_to_expression(button)
 	{
 		// Add the new expression to the div
 		var text = document.getElementById("expression").innerText;
-		document.getElementById("expression").innerText = text + button;
+		document.getElementById("expression").innerHTML = "<span></span>" +  text + button;
 	}
 	
 	var querySafeExpression = document.getElementById("expression").innerText.replace(/\+/g, "%2B");
@@ -54,7 +54,7 @@ function evaluate(expression)
 	{
 		if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
 		{
-			document.getElementById("answer").innerHTML = xmlhttp.responseText;
+			document.getElementById("answer").innerHTML = "<span></span>" + xmlhttp.responseText;
 		}
 
 	}
@@ -87,31 +87,31 @@ function evaluate(expression)
 		
 		<a href="#" onclick="add_to_expression('7');">
 			<div id="button_7" class="button">
-				7
+				<span></span>7
 			</div>
 		</a>
 		
 		<a href="#" onclick="add_to_expression('8');">
 			<div id="button_8" class="button">
-				8
+				<span></span>8
 			</div>
 		</a>
 		
 		<a href="#" onclick="add_to_expression('9');">
 			<div id="button_9" class="button">
-				9
+				<span></span>9
 			</div>
 		</a>
 		
 		<a href="#" onclick="add_to_expression('del');">
 			<div id="button_del" class="button">
-				DEL
+				<span></span>DEL
 			</div>
 		</a>
 
 		<a href="#" onclick="add_to_expression('clear')">
 			<div id="button_clear" class="button">
-				AC
+				<span></span>AC
 			</div>
 		</a>
 
@@ -120,31 +120,31 @@ function evaluate(expression)
 
 		<a href="#" onclick="add_to_expression('4');">
 			<div id="button_4" class="button">
-				4
+				<span></span>4
 			</div>
 		</a>
 
 		<a href="#" onclick="add_to_expression('5')">
 			<div id="button_5" class="button">
-				5
+				<span></span>5
 			</div>
 		</a>
 
 		<a href="#" onclick="add_to_expression('6')">
 			<div id="button_6" class="button">
-				6
+				<span></span>6
 			</div>
 		</a>
 
 		<a href="#" onclick="add_to_expression('*')">
 			<div id="button_times" class="button">
-				*
+				<span></span>*
 			</div>
 		</a>
 		
 		<a href="#" onclick="add_to_expression('/')">
 			<div id="button_divide" class="button">
-				/
+				<span></span>/
 			</div>
 		</a>
 
@@ -153,31 +153,31 @@ function evaluate(expression)
 
 		<a href="#" onclick="add_to_expression('1')">
 			<div id="button_1" class="button">
-				1
+				<span></span>1
 			</div>
 		</a>
 
 		<a href="#" onclick="add_to_expression('2')">
 			<div id="button_2" class="button">
-				2
+				<span></span>2
 			</div>
 		</a>
 		
 		<a href="#"  onclick="add_to_expression('3')">
 			<div id="button_3" class="button">
-				3
+				<span></span>3
 			</div>
 		</a>
 
 		<a href="#" onclick="add_to_expression('+')">
 			<div id="button_plus" class="button">
-				+
+				<span></span>+
 			</div>
 		</a>
 
 		<a href="#" onclick="add_to_expression('-')">
 			<div id="button_minus" class="button">
-				-
+				<span></span>-
 			</div>
 		</a>
 
@@ -186,7 +186,7 @@ function evaluate(expression)
 		
 		<a href="#" onclick="add_to_expression('0')">
 			<div id="button_0" class="button">
-				0
+				<span></span>0
 			</div>
 		</a>
 
@@ -198,19 +198,19 @@ function evaluate(expression)
 
 		<a href="#" onclick="add_to_expression('.')">
 			<div id="button_point" class="button">
-				.
+				<span></span>.
 			</div>
 		</a>
 
 		<a href="#" onclick="add_to_expression('^')">
 			<div id="button_pow" class="button">
-				^
+				<span></span>^
 			</div>
 		</a>
 
 		<a href="#" onclick="go_to_calculate()">
 			<div id="button_exec" class="button">
-				EXEC
+				<span></span>EXEC
 			</div>
 		</a>
 
