@@ -91,6 +91,17 @@
 	display: inline-block;
 
 	opacity: 0.9;
+
+	-webkit-transition: background-color 0.5s ease-out;
+	-moz-transition: background-color 0.5s ease-out;
+	-o-transition: background-color 0.5s ease-out;
+	transition: background-color 0.5s ease-out;
+
+	z-index: 1;
+}
+
+.button:hover {
+	background-color: #26c6da
 }
 
 a:link {
