@@ -126,7 +126,7 @@
 	width: 50%;
 	height: 100%;
 	font-family: 'Open Sans', sans-serif;
-	background-color: #80DEEA;
+	background-color: #A3E9A4;
 	float: left;
 	display: inline-block;
 	*display: inline;
@@ -151,6 +151,10 @@
 	z-index: 0;
 }
 
+.special_button:hover {
+	background-color: #72D572;
+}
+
 button:hover {
 	background-color: #26C6DA;
 }
@@ -160,7 +164,7 @@ button:hover {
 }
 
 #special_buttons {
-	background-color: #4DD0E1;
+	background-color: #D0F8CE;
 
 	width: 0%;
 	height: 68.5%;

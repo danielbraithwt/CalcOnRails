@@ -4,7 +4,15 @@
 
 $(document).ready(function() {
 		$("#button_blank").click(function() {
-				$("#special_buttons").width("40%")
+				if( $("#special_buttons").width() != 0 )
+				{
+					$("#special_buttons").width("0%");
+				}
+				else
+				{
+					$("#special_buttons").width("40%");
+				}
+				
 				});
 		});
 
@@ -215,15 +223,15 @@ function ensure_expression_size(new_expression)
 			</div>
 		</a>
 
-		<a href="#" onclick="#">
-			<div id="button_blank" class="button">
-				<span></span>S
-			</div>
-		</a>
-
 		<a href="#" onclick="add_to_expression('.')">
 			<div id="button_point" class="button">
 				<span></span>.
+			</div>
+		</a>
+
+		<a href="#" onclick="#">
+			<div id="button_blank" class="button">
+				<span></span>S
 			</div>
 		</a>
 
@@ -245,13 +253,13 @@ function ensure_expression_size(new_expression)
 <div id="special_buttons">
 	
 	<div id="special_button_row_1" class="special_button_row">
-		<a href="#" onclick="#">
+		<a href="#" onclick="add_to_expression('ln')">
 			<div id="button_ln" class="special_button">
 				<span></span>ln
 			</div>
 		</a>
 
-		<a href="#" onclick="#">
+		<a href="#" onclick="add_to_expression('log')">
 			<div id="button_log" class="special_button">
 				<span></span>log
 			</div>
@@ -259,13 +267,13 @@ function ensure_expression_size(new_expression)
 	</div>
 
 	<div id="special_button_row_2" class="special_button_row">
-		<a href="#" onclick="#">
+		<a href="#" onclick="add_to_expression('sin')">
 			<div id="button_sin" class="special_button">
 				<span></span>sin
 			</div>
 		</a>
 
-		<a href="#" onclick"#">
+		<a href="#" onclick="add_to_expression('arcsin')">
 			<div id="button_arcsin" class="special_button">
 				<span></span>asin
 			</div>
@@ -273,13 +281,13 @@ function ensure_expression_size(new_expression)
 	</div>
 
 	<div id="special_button_row_3" class="special_button_row">
-		<a href="#" onclick="#">
+		<a href="#" onclick="add_to_expression('cos')">
 			<div id="button_cos" class="special_button">
 				<span></span>cos
 			</div>
 		</a>
 
-		<a href="#" onclick="#">
+		<a href="#" onclick="add_to_expression('arccos')">
 			<div id="button_arccos" class="special_button">
 				<span></span>acos
 			</div>
@@ -287,13 +295,13 @@ function ensure_expression_size(new_expression)
 	</div>
 
 	<div id="special_button_row_4" class="special_button_row">
-		<a href="#" onclick="#">
+		<a href="#" onclick="add_to_button('tan')">
 			<div id="button_tan" class="special_button">
 				<span></span>tan
 			</div>
 		</a>
 
-		<a href="#" onclick="#">
+		<a href="#" onclick="add_to_button('arctan')">
 			<div id = "button_arctan" class="special_button">
 				<span></span>atan
 			</div>
