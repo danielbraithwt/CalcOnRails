@@ -6,11 +6,13 @@ $(document).ready(function() {
 		$("#button_blank").click(function() {
 				if( $("#special_buttons").width() != 0 )
 				{
-					$("#special_buttons").width("0%");
+					//$("#special_buttons").width("0%");
+					$("#special_buttons").animate({width:"0%"});
 				}
 				else
 				{
-					$("#special_buttons").width("40%");
+					//$("#special_buttons").width("40%");
+					$("#special_buttons").animate({width:"40%"});
 				}
 				
 				});

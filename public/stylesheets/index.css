@@ -144,6 +144,8 @@
 	-o-transition: background-color 0.5s ease-out;
 	transition: background-color 0.5s ease-out;
 
+	overflow: hidden;
+
 	position: relative;
 
 	z-index: 0;
@@ -165,13 +167,14 @@ button:hover {
 	background-color: #D0F8CE;
 
 	width: 0%;
-	height: 83%;
-	/*display: none;*/
+	height: 68.5%;
 	position: fixed;
 	bottom: 1%;
-	left: 1%;
+	right: 1%;
 
 	box-shadow: 0px 0px 5px #888888;
+
+	overflow: hidden;
 
 	z-index: 100;
 }
