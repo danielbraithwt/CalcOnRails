@@ -1,6 +1,16 @@
 <%= javascript_include_tag "jquery-2.1.1.min.js" %>
 
 <script>
+
+$(document).ready(function() {
+		$("#button_blank").click(function() {
+				$("#special_buttons").width("40%")
+				});
+		});
+
+</script>
+
+<script>
 function go_to_calculate()
 {
 	// Get the content of the expression div
@@ -84,6 +94,8 @@ function ensure_expression_size(new_expression)
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
 
 <%= stylesheet_link_tag("index.css") %>
+
+<div id="container">
 
 <div id="io">
 	<div id="expression">
@@ -205,7 +217,7 @@ function ensure_expression_size(new_expression)
 
 		<a href="#" onclick="#">
 			<div id="button_blank" class="button">
-				
+				<span></span>S
 			</div>
 		</a>
 
@@ -228,4 +240,66 @@ function ensure_expression_size(new_expression)
 		</a>
 
 	</div>
+</div>
+
+<div id="special_buttons">
+	
+	<div id="special_button_row_1" class="special_button_row">
+		<a href="#" onclick="#">
+			<div id="button_ln" class="special_button">
+				<span></span>ln
+			</div>
+		</a>
+
+		<a href="#" onclick="#">
+			<div id="button_log" class="special_button">
+				<span></span>log
+			</div>
+		</a>
+	</div>
+
+	<div id="special_button_row_2" class="special_button_row">
+		<a href="#" onclick="#">
+			<div id="button_sin" class="special_button">
+				<span></span>sin
+			</div>
+		</a>
+
+		<a href="#" onclick"#">
+			<div id="button_arcsin" class="special_button">
+				<span></span>asin
+			</div>
+		</a>
+	</div>
+
+	<div id="special_button_row_3" class="special_button_row">
+		<a href="#" onclick="#">
+			<div id="button_cos" class="special_button">
+				<span></span>cos
+			</div>
+		</a>
+
+		<a href="#" onclick="#">
+			<div id="button_arccos" class="special_button">
+				<span></span>acos
+			</div>
+		</a>
+	</div>
+
+	<div id="special_button_row_4" class="special_button_row">
+		<a href="#" onclick="#">
+			<div id="button_tan" class="special_button">
+				<span></span>tan
+			</div>
+		</a>
+
+		<a href="#" onclick="#">
+			<div id = "button_arctan" class="special_button">
+				<span></span>atan
+			</div>
+		</a>
+	</div>
+
+</div>
+
 </div>

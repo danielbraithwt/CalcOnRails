@@ -1,3 +1,8 @@
+#container {
+	height: 100%;
+	width: 100%;
+}
+
 #top_bar {
 	width: 100%
 	height: 5%
@@ -97,11 +102,76 @@
 	-o-transition: background-color 0.5s ease-out;
 	transition: background-color 0.5s ease-out;
 
-	z-index: 1;
+	position: relative;
+
+	z-index: 0;
+}
+
+#special_buttons span {
+	height: 100%;
+	vertical-align: middle;
+	display: inline-block;	
+}
+
+.special_button_row {
+	width: 100%;
+	height: 25%;
+	overflow: auto;
+
+}
+
+
+
+.special_button {
+	width: 50%;
+	height: 100%;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #80DEEA;
+	float: left;
+	display: inline-block;
+	*display: inline;
+	text-align: center;
+	vertical-align: middle;
+
+	/*line-height: 200px;*/
+	font-size: 3em;
+	color: rgba(0, 0, 0, 0.8);
+
+	display: inline-block;
+
+	opacity: 0.9;
+
+	-webkit-transition: background-color 0.5s ease-out;
+	-moz-transition: background-color 0.5s ease-out;
+	-o-transition: background-color 0.5s ease-out;
+	transition: background-color 0.5s ease-out;
+
+	position: relative;
+
+	z-index: 0;
+}
+
+button:hover {
+	background-color: #26C6DA;
 }
 
 .button:hover {
 	background-color: #26c6da
+}
+
+#special_buttons {
+	background-color: #4DD0E1;
+
+	width: 0%;
+	height: 68.5%;
+	/*display: none;*/
+	position: fixed;
+	bottom: 1%;
+	left: 1%;
+
+	box-shadow: 0px 0px 5px #888888;
+
+	z-index: 100;
 }
 
 a:link {
