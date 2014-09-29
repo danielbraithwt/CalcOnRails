@@ -115,12 +115,10 @@
 
 .special_button_row {
 	width: 100%;
-	height: 25%;
+	height: 20%;
 	overflow: auto;
 
 }
-
-
 
 .special_button {
 	width: 50%;
@@ -167,7 +165,7 @@ button:hover {
 	background-color: #D0F8CE;
 
 	width: 0%;
-	height: 68.5%;
+	height: 83%;
 	/*display: none;*/
 	position: fixed;
 	bottom: 1%;

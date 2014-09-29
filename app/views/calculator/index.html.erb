@@ -16,13 +16,23 @@ $(document).ready(function() {
 				});
 		});
 
+$(document).ready(function() {
+			$("#io").click(function() {
+					$("#special_buttons").width("0%");
+				});
+		});
+
 </script>
 
 <script>
+
+var currentExpression = [];
+
 function go_to_calculate()
 {
 	// Get the content of the expression div
-	var expression = document.getElementById("expression").innerText;
+	//var expression = document.getElementById("expression").innerText;
+	var expression = currentExpression.join("");
 
 	// Make expression query safe and pass it via URL
 	var querySafeExpression = expression.replace(/\+/g, "%2B");
@@ -33,12 +43,14 @@ function go_to_calculate()
 
 function add_to_expression(button)
 {
+	$("#special_buttons").width("0%");
+
 	if( button == "del" )
 	{
 		// Then we wnat to delete the last entered item
-		var expression = document.getElementById("expression").innerText;
-		ensure_expression_size(expression.substring(0, expression.length-1));
-		document.getElementById("expression").innerHTML = "<span></span>" + expression.substring(0, expression.length-1);
+		currentExpression.pop(button);
+		ensure_expression_size(currentExpression.join(""));
+		document.getElementById("expression").innerHTML = "<span></span>" + currentExpression.join(" ");
 	}
 	else if( button == "clear" )
 	{
@@ -47,9 +59,9 @@ function add_to_expression(button)
 	else
 	{
 		// Add the new expression to the div
-		var text = document.getElementById("expression").innerText;
-		ensure_expression_size(text + button);
-		document.getElementById("expression").innerHTML = "<span></span>" +  text + button;
+		currentExpression.push(button);
+		ensure_expression_size(currentExpression.join(""));
+		document.getElementById("expression").innerHTML = "<span></span>" + currentExpression.join("");
 	}
 
 	// Make query safe and use the AJAX evaluate function to get the result of it
@@ -251,58 +263,72 @@ function ensure_expression_size(new_expression)
 </div>
 
 <div id="special_buttons">
-	
+
 	<div id="special_button_row_1" class="special_button_row">
-		<a href="#" onclick="add_to_expression('ln')">
+		<a href="#" onclick="add_to_expression('(')">
+			<div id="button_open_bracket" class="special_button">
+				<span></span>(
+			</div>
+		</a>
+
+		<a href="#" onclick="add_to_expression(')')">
+			<div id="button_close_bracket" class="special_button">
+				<span></span>)
+			</div>
+		</a>
+	</div>
+	
+	<div id="special_button_row_2" class="special_button_row">
+		<a href="#" onclick="add_to_expression('ln(')">
 			<div id="button_ln" class="special_button">
 				<span></span>ln
 			</div>
 		</a>
 
-		<a href="#" onclick="add_to_expression('log')">
+		<a href="#" onclick="add_to_expression('log(')">
 			<div id="button_log" class="special_button">
 				<span></span>log
 			</div>
 		</a>
 	</div>
 
-	<div id="special_button_row_2" class="special_button_row">
-		<a href="#" onclick="add_to_expression('sin')">
+	<div id="special_button_row_3" class="special_button_row">
+		<a href="#" onclick="add_to_expression('sin(')">
 			<div id="button_sin" class="special_button">
 				<span></span>sin
 			</div>
 		</a>
 
-		<a href="#" onclick="add_to_expression('arcsin')">
+		<a href="#" onclick="add_to_expression('arcsin(')">
 			<div id="button_arcsin" class="special_button">
 				<span></span>asin
 			</div>
 		</a>
 	</div>
 
-	<div id="special_button_row_3" class="special_button_row">
-		<a href="#" onclick="add_to_expression('cos')">
+	<div id="special_button_row_4" class="special_button_row">
+		<a href="#" onclick="add_to_expression('cos(')">
 			<div id="button_cos" class="special_button">
 				<span></span>cos
 			</div>
 		</a>
 
-		<a href="#" onclick="add_to_expression('arccos')">
+		<a href="#" onclick="add_to_expression('arccos(')">
 			<div id="button_arccos" class="special_button">
 				<span></span>acos
 			</div>
 		</a>
 	</div>
 
-	<div id="special_button_row_4" class="special_button_row">
-		<a href="#" onclick="add_to_button('tan')">
+	<div id="special_button_row_5" class="special_button_row">
+		<a href="#" onclick="add_to_button('tan(')">
 			<div id="button_tan" class="special_button">
 				<span></span>tan
 			</div>
 		</a>
 
-		<a href="#" onclick="add_to_button('arctan')">
-			<div id = "button_arctan" class="special_button">
+		<a href="#" onclick="add_to_button('arctan(')">
+			<div id="button_arctan" class="special_button">
 				<span></span>atan
 			</div>
 		</a>
