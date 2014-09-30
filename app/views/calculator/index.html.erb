@@ -12,10 +12,6 @@ $(document).ready(function() {
 				}
 				else
 				{
-					var right = $(document).width() - ($("#buttons").position().left + $("#buttons").width());
-					$("#special_buttons").css({'right':(right+'px'),
-								   'left': 'auto'});
-
 					$("#special_buttons").animate({width:$(document).width()/2 + 'px'});
 				}
 				
@@ -28,6 +24,12 @@ $(document).ready(function() {
 					$("#special_buttons").animate({width: '0%'});
 				});
 			});
+
+$(window).resize(function() {
+	var right = $(document).width() - ($("#buttons").position().left + $("#buttons").width());
+	$("#special_buttons").css({'right':(right+'px'),
+							   'left': 'auto'});
+});
 
 </script>
 
