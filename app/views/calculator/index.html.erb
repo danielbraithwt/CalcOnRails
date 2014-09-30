@@ -4,6 +4,7 @@
 
 $(document).ready(function() {
 		$("#button_blank").click(function() {
+
 				if( $("#special_buttons").width() != 0 )
 				{
 					//$("#special_buttons").width("0%");
@@ -11,18 +12,22 @@ $(document).ready(function() {
 				}
 				else
 				{
-					//$("#special_buttons").width("40%");
-					$("#special_buttons").animate({width:"40%"});
+					var right = $(document).width() - ($("#buttons").position().left + $("#buttons").width());
+					$("#special_buttons").css({'right':(right+'px'),
+								   'left': 'auto'});
+
+					$("#special_buttons").animate({width:$(document).width()/2 + 'px'});
 				}
 				
 				});
 		});
 
+// Close the side bar if there is a click in the IO box
 $(document).ready(function() {
 			$("#io").click(function() {
-					$("#special_buttons").width("0%");
+					$("#special_buttons").animate({width: '0%'});
 				});
-		});
+			});
 
 </script>
 
