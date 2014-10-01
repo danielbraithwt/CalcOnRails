@@ -1,4 +1,5 @@
 <%= javascript_include_tag "jquery-2.1.1.min.js" %>
+<%= javascript_include_tag "jquery-ui.min.js" %>
 
 <script>
 
@@ -59,7 +60,7 @@ function add_to_expression(button)
 		// Then we wnat to delete the last entered item
 		currentExpression.pop(button);
 		ensure_expression_size(currentExpression.join(""));
-		document.getElementById("expression").innerHTML = "<span></span>" + currentExpression.join(" ");
+		document.getElementById("expression").innerHTML = "<span></span>" + currentExpression.join("");
 	}
 	else if( button == "clear" )
 	{
@@ -102,7 +103,7 @@ function evaluate(expression)
 			var result = parseInt(xmlhttp.responseText);
 			var rgb = HSBtoRGB(result % 100, 0.68, 0.66);
 
-			$("#page").css({"background-color": "rgb(" + parseInt(rgb[0]) + ", " + parseInt(rgb[1]) + ", " + parseInt(rgb[2]) + ")"});
+			$("#page").animate({backgroundColor: "rgb(" + parseInt(rgb[0]) + ", " + parseInt(rgb[1]) + ", " + parseInt(rgb[2]) + ")"});
 		}
 
 	}
