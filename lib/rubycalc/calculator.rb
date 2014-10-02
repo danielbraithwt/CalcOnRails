@@ -86,11 +86,16 @@ class Calculator
 	# Function takes an expression and evaulates the powers
 	# in the expression
 	def self.parse_exponents(expression)
+
 		pow = expression.index("^")
 
 		while pow do
-			expstart = expression.rindex(" ", pow) || 0
-			expend = expression.index(" ", pow) || expression.length
+			#expstart = expression.rindex(" ", pow) || 0
+			#expend = expression.index(" ", pow) || expression.length
+			
+			expstart = expression.rindex(/[+|-|*|\/|\s]/, pow) || 0
+			expend = expression.index(/[+|-|*|\/|\s]/, pow) || expression.length
+
 			
 			# Check to make sure its valid
 			raise "Invalid Expression: Check your powers!" if !Utils::is_a_number?(expression[expstart,pow]) || !Utils::is_a_number?(expression[pow+1,expend])
