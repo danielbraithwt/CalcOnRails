@@ -26,11 +26,20 @@ $(document).ready(function() {
 				});
 			});
 
+// Resize the side bar on page load
+$(window).load(function() {
+	var right = $(document).width() - ($("#buttons").position().left + $("#buttons").width());
+	$("#special_buttons").css({'right':(right+'px'),
+							   'left': 'auto'});
+	});
+
+// Resize the side bar on page resize
 $(window).resize(function() {
 	var right = $(document).width() - ($("#buttons").position().left + $("#buttons").width());
 	$("#special_buttons").css({'right':(right+'px'),
 							   'left': 'auto'});
-});
+	});
+
 
 </script>
 
@@ -102,8 +111,8 @@ function evaluate(expression)
 			document.getElementById("answer").innerHTML = "<span></span>" + xmlhttp.responseText;
 			var result = parseInt(xmlhttp.responseText);
 			var rgb = HSBtoRGB(result % 100, 0.68, 0.66);
-
-			$("#page").animate({backgroundColor: "rgb(" + parseInt(rgb[0]) + ", " + parseInt(rgb[1]) + ", " + parseInt(rgb[2]) + ")"});
+			
+			if( !isNaN(result) ) $("#page").animate({backgroundColor: "rgb(" + parseInt(rgb[0]) + ", " + parseInt(rgb[1]) + ", " + parseInt(rgb[2]) + ")"});
 		}
 
 	}
@@ -390,13 +399,13 @@ function HSBtoRGB(h, s, l)
 	</div>
 
 	<div id="special_button_row_5" class="special_button_row">
-		<a href="#" onclick="add_to_button('tan(')">
+		<a href="#" onclick="add_to_expression('tan(')">
 			<div id="button_tan" class="special_button">
 				<span></span>tan
 			</div>
 		</a>
 
-		<a href="#" onclick="add_to_button('arctan(')">
+		<a href="#" onclick="add_to_expression('arctan(')">
 			<div id="button_arctan" class="special_button">
 				<span></span>atan
 			</div>

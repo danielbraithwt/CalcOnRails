@@ -7,6 +7,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+
+	background-color: #EEEEEE;
 }
 
 #container {
@@ -190,7 +192,7 @@ button:hover {
 	width: 0%;
 	height: 68.5%;
 	position: fixed;
-	bottom: 1%;
+	bottom: 0%;
 	right: 1%;
 
 	max-width: 475px;
