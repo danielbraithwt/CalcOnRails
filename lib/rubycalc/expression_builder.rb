@@ -62,8 +62,9 @@ class ExpressionBuilder
 	private
 
 	def verify_line(line)
+
 		# Split the line into the possible variables
-		components = line.gsub(/[\d|(|)|+|-|*|\/|^|=]+/, " ").split(/[\s]+/)
+		components = line.gsub(/[\d|(|)|+|\-|*|\/|^|=]+/, " ").split(/[\s]+/)
 		
 		# Make sure that all the variables have been defined
 		components.each do |var|
