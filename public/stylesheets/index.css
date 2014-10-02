@@ -9,6 +9,7 @@
 	left: 0;
 
 	background-color: #EEEEEE;
+	font-family: 'Source Code Pro', sans-serif;
 }
 
 #container {
@@ -31,7 +32,7 @@
 }
 
 #io {
-	font-family: 'Open Sans', sans-serif;	
+	/*font-family: 'Source Code Pro', sans-serif;/*'Open Sans', sans-serif;*/	
 	width: 100%;
 	height: 30%;
 	box-shadow: 0px 4px 8px #888888;
